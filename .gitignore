@@ -1,7 +1,10 @@
+#pasta virtual
 /.venv
 .venv
 /.venv/
 .venv/
+
+# dotenv
 /.env
 .env
 /.env/
