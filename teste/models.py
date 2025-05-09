@@ -1,9 +1,6 @@
 from django.db import models
-
-# Create your models here.
 from django.db import models
 
-# Create your models here.
 
 class ModelBase(models.Model):
     abstract = True
@@ -91,22 +88,6 @@ class Product(ModelBase):
         db_column='quantity',
         null=False
     )
-    # active = models.BooleanField(
-    #     db_column='is_active',
-    #     null=False,
-    #     default=True
-    # )
-    # created_at = models.DateTimeField(
-    #     db_column='created_at',
-    #     auto_now_add=True,
-    #     null=True
-    # )
-    # modified_at = models.DateTimeField(
-    #     db_column='modified_at',
-    #     auto_now=True,
-    #     null=True
-    # )
-    
     
 class Employee(ModelBase):
     id = models.BigAutoField(
@@ -123,41 +104,6 @@ class Employee(ModelBase):
     registration = models.CharField(
         db_column='registration',
         max_length=15,
-        null=False
-    )
-    
-
-
-class Author(ModelBase):
-    id = models.BigAutoField(
-        db_column='id',
-        null=False,
-        primary_key=True,
-        auto_created=True
-    )
-    name = models.CharField(
-        db_column='name',
-        max_length=70,
-        null=False
-    )
-
-
-class Book(ModelBase):
-    id = models.BigAutoField(
-        db_column='id',
-        null=False,
-        primary_key=True,
-        auto_created=True
-    )
-    title = models.CharField(
-        db_column='title',
-        max_length=200,
-        null=False
-    )
-    author = models.ForeignKey(
-        Author,
-        db_column='author_id',
-        on_delete=models.CASCADE,
         null=False
     )
     
